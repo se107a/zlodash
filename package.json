@@ -1,0 +1,46 @@
+{
+  "name": "ccclodash",
+  "version": "0.4.0",
+  "description": "Reimplement some function of lodash",
+  "main": "index.js",
+  "author": "ccc",
+  "scripts": {
+    "all": "npm run test&&npm run cover&&npm run dist&&npm run docs",
+    "test": "mocha",
+    "cover": "nyc mocha",
+    "dist": "browserify dist/pub.js -o dist/ccclodash.js",
+    "docs": "jsdoc index.js lib -r -d docs -t node_modules/docdash",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "linters": {
+      "lib/**/*.js": [
+        "prettier-standard",
+        "git add"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "standard"
+    }
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "chai": "^4.1.2",
+    "docdash": "^1.0.0",
+    "husky": "^1.1.1",
+    "jsdoc": "^3.5.5",
+    "lint-staged": "^7.3.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
+    "prettier": "^1.14.3",
+    "prettier-standard": "^8.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/se107a/ccclodash.git"
+  }
+}
